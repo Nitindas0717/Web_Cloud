@@ -32,20 +32,26 @@ WebCloud is a full-stack web-based cloud storage solution designed for secure an
 ```bash
 git clone https://github.com/Nitindas0717/Web_Cloud.git
 cd Web_Cloud
+```
 
 ### 2. Install dependencies:
+```bash
 cd backend
 npm install
 
 cd ../frontend
 npm install
+```
 
-### 3. Set up .env in backend/:
+### 3. Set up `.env` in `backend/`:
+```env
 PORT=5000
 JWT_SECRET=your_jwt_secret
 MONGO_URI=mongodb://127.0.0.1:27017/webcloud
+```
 
 ### 4. Run the app:
+```bash
 # In one terminal
 cd backend
 node app.js
@@ -53,23 +59,27 @@ node app.js
 # In another terminal
 cd frontend
 npm run dev
+```
 
 ---
-🧠 Future Plans
 
-    ☁️ Integrate with cloud storage (AWS S3 or Firebase)
+## 🧠 Future Plans
 
-    🧾 Download and delete file options
-
-    🛡️ Role-based access control
-
-    📈 Dashboard with usage analytics
+- ☁️ Integrate with cloud storage (AWS S3 or Firebase)  
+- 🧾 Download and delete file options  
+- 🛡️ Role-based access control  
+- 📈 Dashboard with usage analytics  
 
 ---
-🙌 Contributing
+
+## 🙌 Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-👤 Author
+---
 
-Nitin Das
+## 👤 Author
+
+**Nitin Das**  
+[GitHub Profile](https://github.com/Nitindas0717)
+```
