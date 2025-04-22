@@ -1,40 +1,75 @@
-<<<<<<< HEAD
-# Web_Cloud
-Web-Based Cloud Storage for Secure Data Sharing Across Platforms.
-=======
-# WebCloud 🌐☁️
+# 🌐 WebCloud
 
-**Web-Based Cloud Storage for Secure Data Sharing Across Platforms**
+WebCloud is a full-stack web-based cloud storage solution designed for secure and user-friendly file management across platforms. It allows users to register, log in, upload files, and manage their data securely with JWT authentication and MongoDB.
 
-## 🚀 Overview
-WebCloud is a secure and user-friendly cloud storage application that allows users to upload, encrypt, share, and manage files online with full control.
+---
 
-## 🔐 Features
-- User Authentication (JWT)
-- File Upload & Download
-- AES Encryption
-- Shareable Links with Permissions
-- Cloud Storage Integration (e.g., S3)
+## 🚀 Features
 
-## 🏗️ Tech Stack
-- Frontend: React + Vite
-- Backend: Node.js + Express
-- Database: MongoDB
-- Cloud: AWS S3 (planned)
+- ✅ User registration and login  
+- 🔐 Secure JWT authentication  
+- 📦 File upload to local storage  
+- 📂 List uploaded files (user-specific)  
+- 🧾 RESTful API with Express.js  
+- 🌱 MongoDB integration  
 
-## 📦 Project Structure
+---
 
+## 🛠️ Tech Stack
 
-## 🛠️ How to Run
-- `cd backend && npm install && node app.js`
-- `cd frontend && npm install && npm run dev`
+- **Frontend**: React.js (Vite)  
+- **Backend**: Node.js, Express.js  
+- **Database**: MongoDB  
+- **Authentication**: JWT  
+- **File Upload**: Multer  
+- **Other tools**: Thunder Client/Postman for testing  
 
-## 💡 TODO
-- [ ] Add Auth
-- [ ] Integrate cloud storage
-- [ ] Enable file sharing
+---
 
+## 🧪 Getting Started Locally
 
-## ⚙️ Status
-🚧 Project in Development - Phase 1: Architecture complete
->>>>>>> origin/master
+### 1. Clone the repo:
+```bash
+git clone https://github.com/Nitindas0717/Web_Cloud.git
+cd Web_Cloud
+
+### 2. Install dependencies:
+cd backend
+npm install
+
+cd ../frontend
+npm install
+
+### 3. Set up .env in backend/:
+PORT=5000
+JWT_SECRET=your_jwt_secret
+MONGO_URI=mongodb://127.0.0.1:27017/webcloud
+
+### 4. Run the app:
+# In one terminal
+cd backend
+node app.js
+
+# In another terminal
+cd frontend
+npm run dev
+
+---
+🧠 Future Plans
+
+    ☁️ Integrate with cloud storage (AWS S3 or Firebase)
+
+    🧾 Download and delete file options
+
+    🛡️ Role-based access control
+
+    📈 Dashboard with usage analytics
+
+---
+🙌 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+👤 Author
+
+Nitin Das

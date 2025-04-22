@@ -1,37 +1,18 @@
 const jwt = require('jsonwebtoken');
-<<<<<<< HEAD
-const users = require('../../data/users');
 
-const protect = (req, res, next) => {
-  let token;
-
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith('Bearer')
-  ) {
-    try {
-      token = req.headers.authorization.split(' ')[1];
-
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = users.find(user => user.id === decoded.id);
-
-      next();
-    } catch (error) {
-      console.error('Token verification failed:', error);
-=======
-
+// Protect middleware
 const protect = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (authHeader && authHeader.startsWith('Bearer')) {
     try {
       const token = authHeader.split(' ')[1];
-      const decoded = jwt.verify(token, 'your_jwt_secret'); // same secret as in generateToken.js
+      const decoded = jwt.verify(token, process.env.JWT_SECRET); // using secret from .env
 
-      req.user = decoded;
+      req.user = decoded; // Attach user info from token
       next();
     } catch (error) {
->>>>>>> origin/master
+      console.error('Token verification failed:', error);
       res.status(401).json({ message: 'Not authorized, token failed' });
     }
   } else {
