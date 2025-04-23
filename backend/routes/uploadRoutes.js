@@ -2,15 +2,10 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const router = express.Router();
-<<<<<<< HEAD
 const { protect } = require('../src/middleware/authMiddleware');
 const files = require('../data/files');
 
 // Set up multer storage
-=======
-
-// Set up storage engine
->>>>>>> origin/master
 const storage = multer.diskStorage({
   destination(req, file, cb) {
     cb(null, 'uploads/');
@@ -20,7 +15,6 @@ const storage = multer.diskStorage({
   },
 });
 
-<<<<<<< HEAD
 const upload = multer({ storage });
 
 // @route   POST /api/upload
@@ -52,16 +46,6 @@ router.get('/myfiles', protect, (req, res) => {
   res.status(200).json({
     message: 'Fetched user files',
     files: userFiles,
-=======
-// File upload middleware
-const upload = multer({ storage });
-
-// POST /api/upload
-router.post('/', upload.single('file'), (req, res) => {
-  res.status(200).json({
-    message: 'File uploaded successfully',
-    filePath: `/uploads/${req.file.filename}`,
->>>>>>> origin/master
   });
 });
 

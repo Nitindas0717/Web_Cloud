@@ -3,32 +3,20 @@ const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
 const generateToken = require('../utils/generateToken');
 const users = require('../data/users'); // shared array
-<<<<<<< HEAD
 const { protect } = require('../src/middleware/authMiddleware'); // ✅ Correct import
 
 console.log('typeof protect:', typeof protect);
-// @desc    Test Route
-=======
-const { protect } = require('../src/middleware/authMiddleware');
-
-
-// Temporary in-memory user storage (you'll replace this with a database later)
-//let users = [];
 
 // @desc    Test Route
 // @route   GET /api/users/test
 // @access  Public
->>>>>>> origin/master
 router.get('/test', (req, res) => {
   res.send('User route working!');
 });
 
 // @desc    Register a new user
-<<<<<<< HEAD
-=======
 // @route   POST /api/users/register
 // @access  Public
->>>>>>> origin/master
 router.post('/register', (req, res) => {
   const { name, email, password } = req.body;
 
@@ -41,11 +29,7 @@ router.post('/register', (req, res) => {
     id: uuidv4(),
     name,
     email,
-<<<<<<< HEAD
-    password, // should be hashed
-=======
-    password, // In real apps, this should be hashed
->>>>>>> origin/master
+    password, // You can hash this later
   };
 
   users.push(newUser);
@@ -59,11 +43,8 @@ router.post('/register', (req, res) => {
 });
 
 // @desc    Authenticate user & get token
-<<<<<<< HEAD
-=======
 // @route   POST /api/users/login
 // @access  Public
->>>>>>> origin/master
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
 
@@ -81,10 +62,9 @@ router.post('/login', (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 // @desc    Get user profile
-=======
->>>>>>> origin/master
+// @route   GET /api/users/profile
+// @access  Private
 router.get('/profile', protect, (req, res) => {
   const user = users.find(u => u.id === req.user.id);
   
@@ -102,8 +82,4 @@ router.get('/profile', protect, (req, res) => {
   });
 });
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 module.exports = router;
